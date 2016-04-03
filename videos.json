@@ -1,0 +1,32 @@
+[
+    {
+        "id" : "101",
+        "name" : "übung 1",
+        "description": "beschreibung übung 1",
+        "url": "http://192.168.1.22/bodywell/01.mp4"
+    },
+    {
+        "id" : "102",
+        "name" : "übung 2",
+        "description": "beschreibung übung 2",
+        "url": "http://192.168.1.22/bodywell/02.mp4"
+    },
+    {
+        "id" : "103",
+        "name" : "übung 3",
+        "description": "beschreibung übung 3",
+        "url": "http://192.168.1.22/bodywell/03.mp4"
+    },
+    {
+        "id" : "104",
+        "name" : "übung 4",
+        "description": "beschreibung übung 4",
+        "url": "http://192.168.1.22/bodywell/04.mp4"
+    },
+    {
+        "id" : "105",
+        "name" : "übung 5",
+        "description": "beschreibung übung 5",
+        "url": "http://192.168.1.22/bodywell/05.mp4"
+    }
+]
