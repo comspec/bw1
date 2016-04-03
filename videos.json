@@ -28,5 +28,47 @@
         "name" : "übung 5",
         "description": "beschreibung übung 5",
         "url": "http://192.168.1.22/bodywell/05.mp4"
+    },
+    {
+        "id" : "106",
+        "name" : "übung 6",
+        "description": "beschreibung übung 6",
+        "url": "http://192.168.1.22/bodywell/06.mp4"
+    },
+    {
+        "id" : "107",
+        "name" : "übung 7",
+        "description": "beschreibung übung 7",
+        "url": "http://192.168.1.22/bodywell/07.mp4"
+    },
+    {
+        "id" : "108",
+        "name" : "übung 8",
+        "description": "beschreibung übung 8",
+        "url": "http://192.168.1.22/bodywell/08.mp4"
+    },
+    {
+        "id" : "109",
+        "name" : "übung 9",
+        "description": "beschreibung übung 9",
+        "url": "http://192.168.1.22/bodywell/09.mp4"
+    },
+    {
+        "id" : "110",
+        "name" : "übung 10",
+        "description": "beschreibung übung 10",
+        "url": "http://192.168.1.22/bodywell/10.mp4"
+    },
+    {
+        "id" : "111",
+        "name" : "übung 11",
+        "description": "beschreibung übung 11",
+        "url": "http://192.168.1.22/bodywell/11.mp4"
+    },
+    {
+        "id" : "112",
+        "name" : "übung 12",
+        "description": "beschreibung übung 12",
+        "url": "http://192.168.1.22/bodywell/12.mp4"
     }
 ]
