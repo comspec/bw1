@@ -1,15 +1,17 @@
 body {
 	height: 100%;
-    background-color: black;
+    background-color: #2a2a2a;
+	color: #f8d403;
 }
 
 div .previewbox {
 	background-color: #202020;
-	color: white;
+	color: #f8d403;
 	width: 324px;
 	height: 184px;
-	border-color: red;
+	border-color: #f8d403;
 	border-width: 1px;
+	margin-bottom: 40px;
 }
 
 .previewimage {
@@ -56,4 +58,22 @@ div .previewbox {
   width: auto;
   height: auto;
   transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px){
+    .navbar-nav{
+        float:none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+    }
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	background-color: #f8d403;
+	color: #2a2a2a;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #f8d403;
 }
