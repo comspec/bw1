@@ -7,10 +7,10 @@ body {
 div .previewbox {
 	background-color: #202020;
 	color: #f8d403;
-	width: 324px;
-	height: 184px;
+	width: 326px;
+	height: 186px;
 	border-color: #f8d403;
-	border-width: 1px;
+	border-width: 2px;
 	margin-bottom: 40px;
 }
 
