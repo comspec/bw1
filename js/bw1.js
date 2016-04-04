@@ -15,7 +15,7 @@ $(function() {
 		}
 	});
 	
-	$(".previewbox").on("click", "img", function(e) {
+	$(".container").on("click", "img", function(e) {
 		e.preventDefault();
 
 		if (modal.css("opacity") === "0") {
