@@ -4,6 +4,24 @@ body {
 	color: #f8d403;
 }
 
+@media (min-width: 768px) {
+    .navbar-nav {
+        float:none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+    }
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	background-color: #f8d403;
+	color: #2a2a2a;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+	color: #f8d403;
+}
+
 div .previewbox {
 	background-color: #202020;
 	color: #f8d403;
@@ -43,37 +61,27 @@ div .previewbox {
 }
 
 /*.video {
-  position: fixed;
-  top: 50%; left: 50%;
-  z-index: 1;
-  transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%; left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
 }*/
 
 .video {
-  position: fixed;
-  top: 50%; left: 50%;
-  z-index: 1;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
 }
 
-@media (min-width: 768px){
-    .navbar-nav{
-        float:none;
-        margin: 0 auto;
-        display: table;
-        table-layout: fixed;
-    }
-}
-
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-	background-color: #f8d403;
-	color: #2a2a2a;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-	color: #f8d403;
+.timerBox {
+    font-size: 550%;
+    position: fixed;
+    right: 0%;
+    margin-right: 25px;
 }

@@ -23,10 +23,12 @@ function loadVideos() {
 $(function () {
     "use strict";
 	var modal = $(".modalDialog"),
-        player = $("#player");
-	
+      timer = $("#runner"),
+      player = $("#player");
+
 	loadVideos(); //beginner intermediate advanced
-    listVideos("beginner");
+  listVideos("beginner");
+  timer.runner();
 
 	$(".navbar-nav > li > a").click(function (e) {
 		e.preventDefault();
@@ -38,22 +40,24 @@ $(function () {
 			listVideos(e.currentTarget.hash.substr(1));
 		}
 	});
-	
+
 	$(".container").on("click", "img", function (e) {
 		e.preventDefault();
 
 		if (modal.css("opacity") === "0") {
+      timer.runner('reset', true);
 
 			if (player.get(0).paused === true && player.prop("src") === this.src.replace("png", "mp4")) {
-				player.get(0).play();
+        player.get(0).play();
 				modal.css("opacity", 1);
 			} else {
 				player.prop("src", this.src.replace("png", "mp4"));
 				player.get(0).load();
 				player.get(0).play();
-
 				modal.css("opacity", 1);
 			}
+
+      timer.runner('start');
 		}
 	});
 
@@ -61,12 +65,13 @@ $(function () {
 		e.preventDefault();
 
         if (modal.css("opacity") === "1" && player.get(0).paused === false) {
+            timer.runner('stop');
             player.get(0).pause();
             modal.css("opacity", 0);
         }
 	});
 
-	/*$("#player").on("timeupdate", function(e) {
-      console.log(this.currentTime + " / " + this.duration);
+	/*$("#player").on("timeupdate", function (e) {
+        //console.log(this.currentTime + " / " + this.duration);
     });*/
 });
