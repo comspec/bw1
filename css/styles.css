@@ -74,6 +74,6 @@ div .previewbox {
 	color: #2a2a2a;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
 	color: #f8d403;
 }
