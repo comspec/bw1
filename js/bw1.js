@@ -1,8 +1,11 @@
+var videos;
+
 $(function() {
 	var modal = $(".modalDialog");
 	var player = $("#player");
 	
-	loadVideos("beginner"); //beginner intermediate advanced
+	loadVideos(); //beginner intermediate advanced
+    listVideos("beginner");
 
 	$(".navbar-nav > li > a").click(function(e) {
 		e.preventDefault();
@@ -11,7 +14,7 @@ $(function() {
 		if (!menuItem.parent().hasClass("active")) {
 			$(".navbar-nav > li").removeClass("active");
 			menuItem.parent().addClass("active");
-			loadVideos(e.currentTarget.hash.substr(1));
+			listVideos(e.currentTarget.hash.substr(1));
 		}
 	});
 	
@@ -47,15 +50,20 @@ $(function() {
     });*/
 });
 
-function loadVideos(category) {
+function loadVideos() {
+	$.getJSON("videos.json", function (data) {
+        videos = data;
+        listVideos("beginner");
+    });
+}
+
+function listVideos(category) {
 	$(".container").empty();
 
-	$.getJSON("videos.json", function (data) {
-        $.each(data, function (key, obj) {
-        	if ((category === "beginner" && obj.Category === "A") || (category === "intermediate" && obj.Category === "B") || (category === "advanced" && obj.Category === "C")) {
-            	console.log(key, obj)
-            	$("<div class='col-sx-6 col-sm-6 col-md-3 col-lg-4'><div class='panel previewbox'><img class='previewimage' src='" + obj.ImageURL + "'></img><span>" + obj.Name + "</span></div></div>").appendTo(".container");
-        	}
-        });
+    $.each(videos, function (key, video) {
+        if ((category === "beginner" && video.Category === "A") || (category === "intermediate" && video.Category === "B") || (category === "advanced" && video.Category === "C")) {
+            console.log(key, video)
+            $("<div class='col-sx-6 col-sm-6 col-md-3 col-lg-4'><div class='panel previewbox'><img class='previewimage' src='" + video.ImageURL + "'></img><span>" + video.Name + "</span></div></div>").appendTo(".container");
+        }
     });
 }
