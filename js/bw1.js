@@ -1,13 +1,34 @@
+/*global $*/
 var videos;
 
-$(function() {
-	var modal = $(".modalDialog");
-	var player = $("#player");
+function listVideos(category) {
+    "use strict";
+	$(".container").empty();
+
+    $.each(videos, function (key, video) {
+        if ((category === "beginner" && video.Category === "A") || (category === "intermediate" && video.Category === "B") || (category === "advanced" && video.Category === "C")) {
+            $("<div class='col-sx-6 col-sm-6 col-md-3 col-lg-4'><div class='panel previewbox'><img class='previewimage' src='" + video.ImageURL + "'></img><span>" + video.Name + "</span></div></div>").appendTo(".container");
+        }
+    });
+}
+
+function loadVideos() {
+    "use strict";
+	$.getJSON("videos.json", function (data) {
+        videos = data;
+        listVideos("beginner");
+    });
+}
+
+$(function () {
+    "use strict";
+	var modal = $(".modalDialog"),
+        player = $("#player");
 	
 	loadVideos(); //beginner intermediate advanced
     listVideos("beginner");
 
-	$(".navbar-nav > li > a").click(function(e) {
+	$(".navbar-nav > li > a").click(function (e) {
 		e.preventDefault();
 		var menuItem = $(this);
 
@@ -18,7 +39,7 @@ $(function() {
 		}
 	});
 	
-	$(".container").on("click", "img", function(e) {
+	$(".container").on("click", "img", function (e) {
 		e.preventDefault();
 
 		if (modal.css("opacity") === "0") {
@@ -36,12 +57,12 @@ $(function() {
 		}
 	});
 
-	$(document).on('click', function(e){
+	$(document).on('click', function (e) {
 		e.preventDefault();
 
         if (modal.css("opacity") === "1" && player.get(0).paused === false) {
-        	player.get(0).pause();
-			modal.css("opacity", 0);
+            player.get(0).pause();
+            modal.css("opacity", 0);
         }
 	});
 
@@ -49,21 +70,3 @@ $(function() {
       console.log(this.currentTime + " / " + this.duration);
     });*/
 });
-
-function loadVideos() {
-	$.getJSON("videos.json", function (data) {
-        videos = data;
-        listVideos("beginner");
-    });
-}
-
-function listVideos(category) {
-	$(".container").empty();
-
-    $.each(videos, function (key, video) {
-        if ((category === "beginner" && video.Category === "A") || (category === "intermediate" && video.Category === "B") || (category === "advanced" && video.Category === "C")) {
-            console.log(key, video)
-            $("<div class='col-sx-6 col-sm-6 col-md-3 col-lg-4'><div class='panel previewbox'><img class='previewimage' src='" + video.ImageURL + "'></img><span>" + video.Name + "</span></div></div>").appendTo(".container");
-        }
-    });
-}
