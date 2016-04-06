@@ -1,16 +1,25 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(../fonts/ubuntu.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 body {
 	height: 100%;
-    background-color: #2a2a2a;
+  background-color: #2a2a2a;
 	color: #f8d403;
+	font-family: 'Ubuntu', Arial, serif;
 }
 
 @media (min-width: 768px) {
-    .navbar-nav {
-        float:none;
-        margin: 0 auto;
-        display: table;
-        table-layout: fixed;
-    }
+  .navbar-nav {
+    float:none;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+  }
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
@@ -39,9 +48,9 @@ div .previewbox {
 }
 
 .displayed {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .modalDialog {
@@ -68,20 +77,20 @@ div .previewbox {
 }*/
 
 .video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	transform: translate(-50%, -50%);
 }
 
 .timerBox {
-    font-size: 550%;
-    position: fixed;
-    right: 0%;
-    margin-right: 25px;
+	font-size: 550%;
+	position: fixed;
+	right: 0%;
+	margin-right: 25px;
 }
