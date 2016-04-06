@@ -2,32 +2,31 @@
 var videos;
 
 function listVideos(category) {
-    "use strict";
+  "use strict";
 	$(".container").empty();
 
-    $.each(videos, function (key, video) {
-        if ((category === "beginner" && video.Category === "A") || (category === "intermediate" && video.Category === "B") || (category === "advanced" && video.Category === "C")) {
-            $("<div class='col-sx-6 col-sm-6 col-md-3 col-lg-4'><div class='panel previewbox'><img class='previewimage' src='" + video.ImageURL + "'></img><span>" + video.Name + "</span></div></div>").appendTo(".container");
-        }
-    });
+  $.each(videos, function (key, video) {
+    if (category === video.Category) {
+      $("<div class='col-sx-6 col-sm-6 col-md-3 col-lg-4'><div class='panel previewbox'><img class='previewimage' src='" + encodeURI(video.ImageURL) + "'></img><span>" + video.Name + "</span></div></div>").appendTo(".container");
+    }
+  });
 }
 
 function loadVideos() {
-    "use strict";
+  "use strict";
 	$.getJSON("videos.json", function (data) {
-        videos = data;
-        listVideos("beginner");
-    });
+    videos = data;
+    listVideos("A"); //beginner intermediate advanced
+  });
 }
 
 $(function () {
-    "use strict";
+  "use strict";
 	var modal = $(".modalDialog"),
       timer = $("#runner"),
       player = $("#player");
 
-	loadVideos(); //beginner intermediate advanced
-  listVideos("beginner");
+	loadVideos();
   timer.runner();
 
 	$(".navbar-nav > li > a").click(function (e) {
@@ -64,14 +63,14 @@ $(function () {
 	$(document).on('click', function (e) {
 		e.preventDefault();
 
-        if (modal.css("opacity") === "1" && player.get(0).paused === false) {
-            timer.runner('stop');
-            player.get(0).pause();
-            modal.css("opacity", 0);
-        }
+    if (modal.css("opacity") === "1" && player.get(0).paused === false) {
+      timer.runner('stop');
+      player.get(0).pause();
+      modal.css("opacity", 0);
+    }
 	});
 
-	/*$("#player").on("timeupdate", function (e) {
-        //console.log(this.currentTime + " / " + this.duration);
-    });*/
+  /*$("#player").on("timeupdate", function (e) {
+    //console.log(this.currentTime + " / " + this.duration);
+  });*/
 });
