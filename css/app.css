@@ -46,6 +46,7 @@ div .previewbox {
 	margin: 1px;
 	width: 320px;
 	height: 180px;
+  border-width: 0px;
 }
 
 .headerImage {

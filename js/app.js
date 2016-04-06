@@ -44,7 +44,7 @@ $(function () {
 		e.preventDefault();
 
 		if (modal.css("opacity") === "0") {
-      timer.runner('reset', true);
+      timer.runner("reset", true);
 
 			if (player.get(0).paused === true && player.prop("src") === this.src.replace("png", "mp4")) {
         player.get(0).play();
@@ -56,7 +56,7 @@ $(function () {
 				modal.css("opacity", 1);
 			}
 
-      timer.runner('start');
+      timer.runner("start");
 		}
 	});
 
@@ -64,7 +64,7 @@ $(function () {
 		e.preventDefault();
 
     if (modal.css("opacity") === "1" && player.get(0).paused === false) {
-      timer.runner('stop');
+      timer.runner("stop");
       player.get(0).pause();
       modal.css("opacity", 0);
     }
