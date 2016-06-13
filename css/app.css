@@ -42,6 +42,13 @@ div .previewbox {
 	margin-bottom: 40px;
 }
 
+.previewdescription {
+	position: absolute;
+	font-size: 32px;
+	font-weight: bold;
+	margin-left: 8px;
+}
+
 .previewimage {
 	margin: 1px;
 	width: 320px;
@@ -95,4 +102,5 @@ div .previewbox {
 	position: fixed;
 	right: 0%;
 	margin-right: 25px;
+	z-index: 2;
 }

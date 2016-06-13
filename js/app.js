@@ -7,7 +7,7 @@ function listVideos(category) {
 
   $.each(videos, function (key, video) {
     if (category === video.Category) {
-      $("<div class='col-sx-6 col-sm-6 col-md-3 col-lg-4'><div class='panel previewbox'><img class='previewimage' src='" + encodeURI(video.ImageURL) + "'></img><span>" + video.Name + "</span></div></div>").appendTo(".container");
+      $("<div class='col-sx-6 col-sm-6 col-md-3 col-lg-4'><div class='panel previewbox'>" + "<p class='previewdescription'>" + encodeURI(video.Description) + "</p>" + "<img class='previewimage' src='" + encodeURI(video.ImageURL) + "'></img><span>" + video.Name + "</span></div></div>").appendTo(".container");
     }
   });
 }
